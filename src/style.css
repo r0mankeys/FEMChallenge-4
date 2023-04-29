@@ -1,0 +1,258 @@
+/* Prep Styles */
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url(../assests/fonts/HankenGrotesk-Medium.ttf);
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url(../assests/fonts/HankenGrotesk-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url(../assests/fonts/HankenGrotesk-ExtraBold.ttf);
+  font-style: normal;
+  font-weight: 800;
+}
+
+:root {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --clr-primary-hsl-400: 252, 100%, 67%;
+  --clr-primary-hsl-500: 256, 72%, 46%;
+  --clr-secondary-hsl-400: 241, 81%, 54%;
+  --clr-secondary-hsl-500: 241, 72%, 46%;
+
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 221, 100%, 96%;
+  --clr-neutral-hsl-300: 241, 100%, 89%;
+  --clr-neutral-hsl-700: 224, 30%, 27%;
+
+  --greyish: hsl(224, 30%, 67%);
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+  --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+
+  --gradient-primary: linear-gradient(
+    var(--clr-primary-400),
+    var(--clr-secondary-400)
+  );
+
+  --gradient-to-transparent: linear-gradient(
+    var(--clr-primary-500),
+    hsl(var(--clr-secondary-hsl-500), 0)
+  );
+
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.75rem;
+  --fs-800: 2rem;
+  --fs-900: 5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styling */
+
+body {
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-700);
+}
+
+@media (min-width: 600px) {
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+}
+
+/* Main component (as a whole) styles */
+
+.results_summary {
+  --padding: 2.5rem;
+  --border-radius: 2rem;
+  max-width: 46rem;
+  display: grid;
+}
+
+@media (min-width: 600px) {
+  .results_summary {
+    margin-inline: 1rem;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+}
+
+/* Results section */
+
+.results {
+  color: hsl(var(--clr-neutral-hsl-100), 0.7);
+  text-align: center;
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  background: var(--gradient-primary);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+@media (min-width: 600px) {
+  .results {
+    border-radius: var(--border-radius);
+  }
+}
+
+.results_score {
+  display: grid;
+  place-content: center;
+  width: 12rem;
+  margin-inline: auto;
+  background: var(--gradient-to-transparent);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.results_score span {
+  display: block;
+  font-size: var(--fs-900);
+  font-weight: var(--fw-black);
+  line-height: 1;
+  color: var(--clr-neutral-100);
+}
+
+.results_rank {
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-bold);
+}
+
+/* Multiple place stuff */
+
+.section_title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-600);
+}
+.results,
+.summary {
+  padding: var(--padding);
+}
+
+.grid_gap {
+  display: grid;
+  align-content: start;
+  /*Taakes away default spacing for gap*/
+  gap: 1rem;
+}
+
+.grid_gap[data-spacing="large"] {
+  gap: 2rem;
+}
+
+/* Cards for the stats */
+div#stats {
+  display: grid;
+  gap: 1.5rem;
+}
+
+div.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 55px;
+  border-radius: 0.6rem;
+}
+
+div.card_info {
+  display: flex;
+}
+
+img.icon {
+  margin-inline-end: 0.7rem;
+}
+
+span.stats_score {
+  margin-inline-end: 0.3rem;
+  font-weight: var(--fw-regular);
+}
+
+span.stats_total {
+  margin-inline-start: 0.3rem;
+  color: var(--greyish);
+}
+
+h3 {
+  font-weight: var(--fw-regular);
+}
+
+/* Button styling */
+
+.button {
+  color: var(--clr-neutral-100);
+  line-height: 1;
+  background: var(--clr-neutral-700);
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 100vw;
+  cursor: pointer;
+  font-size: var(--fs-400);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--gradient-primary);
+}
+
+/* Footer */
+
+.footer {
+  width: fit-content;
+  position: absolute;
+  bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    position: static;
+    margin-inline: auto;
+    margin-block-end: 1rem;
+    text-align: center;
+  }
+}
+
+.footer a {
+  transition: color 0.3s ease 0s;
+  color: var(--clr-primary-400);
+}
+
+.footer a:hover {
+  color: hsla(var(--clr-primary-hsl-400), 0.5);
+}

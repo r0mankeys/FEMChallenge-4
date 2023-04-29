@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="../assests/images/favicon-32x32.png"
+      type="image/png"
+    />
+    <script type="module" src="./main.mjs" defer></script>
+    <title>Results Summary Component</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="results_summary">
+        <article class="results grid_gap" data-spacing="large">
+          <h1 class="results_title section_title">Your Result</h1>
+          <div class="results_score"><span id="scored"></span> of 100</div>
+          <div class="grid_gap">
+            <p class="results_rank">Great</p>
+            <p>
+              You have scored higher than 65&percnt; of the people who have
+              taken these tests.
+            </p>
+          </div>
+        </article>
+        <article class="summary grid_gap" data-spacing="large">
+          <h2 class="summary_tile section_title">Summary</h2>
+          <div class="grid-gap" id="stats"></div>
+          <button class="button">Continue</button>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      Challenge by
+      <a href="https://www.frontendmentor.io/home">Frontend Mentor</a> coded by
+      <a href="https://github.com/r0mankeys">r0mankeys.</a>
+    </footer>
+  </body>
+</html>
