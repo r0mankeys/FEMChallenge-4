@@ -1,4 +1,4 @@
-import data from "./dta.json" assert { type: "json" };
+import data from "./data.json" assert { type: "json" };
 
 const SCORE = data[0].overallScore;
 const REACTION = data[1];
