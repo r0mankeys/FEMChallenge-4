@@ -14,6 +14,7 @@ This is a solution to the [Results Smmary Component challenge on Frontend Mentor
     - [What I learned](#what-i-learned)
     - [Continued development](#continued-development)
   - [Author](#author)
+  - [Resolved Issues](#resolved-issues)
 
 ---
 
@@ -59,3 +60,7 @@ Modular programming has really caught my attention, I love the idea of using a l
 ## Author
 
 - Frontend Mentor: [r0mankeys](https://www.frontendmentor.io/home)
+
+## Resolved Issues
+
+There was an issue with the data loading from the local json file, the data would seemingly only load on chrome desktop, however I have used the `fetch API` to ensure that the data is visible on all browsers
