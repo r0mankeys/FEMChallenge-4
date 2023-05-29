@@ -216,6 +216,10 @@ h3 {
   width: fit-content;
   position: absolute;
   bottom: 1rem;
+  /* For browsers that are not chrome */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -224,6 +228,7 @@ h3 {
     margin-inline: auto;
     margin-block-end: 1rem;
     text-align: center;
+    transform: none;
   }
 }
 
