@@ -28,7 +28,21 @@
         </article>
         <article class="summary grid_gap" data-spacing="large">
           <h2 class="summary_tile section_title">Summary</h2>
-          <div class="grid_gap" id="stats"></div>
+          <div class="card_container grid_gap" id="stats">
+            <template class="cards">
+              <div class="card">
+                <div class="card_info">
+                  <img src="" alt="" class="icon" />
+                  <h3 class="card_title"></h3>
+                </div>
+                <p>
+                  <span class="stats_score"></span>/<span class="stats_total"
+                    >100</span
+                  >
+                </p>
+              </div>
+            </template>
+          </div>
           <button class="button">Continue</button>
         </article>
       </section>
